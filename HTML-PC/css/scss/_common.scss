@@ -384,20 +384,25 @@ input {
 }
 
 .btn-default {
-    display: inline-block;
-    color: #422800;
-    border-radius: 10px;
-    padding: 5px 30px;
-    font-size: 15px;
-    text-align: center;
+    display: inline-flex;
+    color: #034C31;
+    border-radius: 6px;
+    padding: 0 16px;
+    height: 40px;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
     background: #FFA726;
     transition: 0.2s all;
-    border: 1px solid #FFA726;
+    border: 0;
     cursor: pointer;
-    &:hover {
-        background: #eb9009;
-        border: 1px solid #eb9009;
-        color: inherit;
+
+    span{
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 15.9323L12.863 12.0609L9 8.1894L10.1893 7.00012L15.25 12.0609L10.1893 17.1216L9 15.9323Z' fill='%23034C31'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right top -2px;
+        border: 0;
+        padding: 2px 24px 2px 0;
     }
     &.big {
         font-size: 28px;
@@ -578,7 +583,6 @@ input {
         width: 100px;
         flex-shrink: 0;
         position: relative;
-        border-radius: 10px;
         overflow: hidden;
         .thumb_img {
             padding-bottom: 70%;
@@ -611,9 +615,9 @@ input {
             text-transform: uppercase;
         }
         .title_new {
-            font-size: 16px;
-            font-weight: 600;
-            line-height: 1.2;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 1.5;
             margin-bottom: 0;
             width: 100%;
         }
@@ -642,7 +646,7 @@ input {
         }
     }
     &.full {
-        gap: 15px;
+        gap: 12px;
         .article-thumb {
             width: 100%;
             .ic-play {
@@ -655,9 +659,6 @@ input {
         }
         .article-content {
             width: 100%;
-            .title_new {
-                font-size: 20px;
-            }
         }
     }
     &.big {

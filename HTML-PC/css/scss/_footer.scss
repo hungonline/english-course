@@ -1,101 +1,86 @@
-.footer {
-    background-color: #00091C;
-    padding: 50px 0px 40px 0px;
-    color: #FFFFFFBF;
-    font-size: 14px;
-    .flexbox {
-        display: flex;
+.footer{
+
+    .wrap{
+        background: #4bfabf url(images/graphics/bg-footer.png) no-repeat center bottom;
+        padding: 12px 10px 90px 10px;
+        border-radius: 10px 10px 0 0;
     }
-    [class*='col_'] {
-        padding: 10px;
+    .grid{
+        column-gap: 10px;
+        row-gap: 10px;
+        margin-bottom: 8px;
     }
-    .col_1 {
-        width: 15.957%;
-    }
-    .col_2 {
-        width: 19%;
-    }
-    .col_3 {
-        width: 17.845%;
-    }
-    .col_4 {
-        width: 21.448%;
-    }
-    .col_5 {
-        width: 25.747%;
-    }
-    .title {
-        font-weight: 600;
-        font-size: 16px;
-        margin-bottom: 12px;
-        color: #fff;
-        line-height: 1.4;
-    }
-    h4 {
+    .social-link{
+        border-radius: 8px;
+        border: 1px solid rgba(0, 125, 227, 0.50);
+         color: #007DE3;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 48px;
+        gap: 4px;
+        font-weight: 500;
         font-size: 14px;
-        font-weight: 400;
     }
-    ul {
-        margin-bottom: 30px;
-        li {
-            margin-bottom: 12px;
-        }
+    .face{
+        grid-column: 2 span;  
     }
-    .contact {
-        p {
-            display: flex;
-            i {
-                width: 30px;
-                flex-shrink: 0;
-                font-size: 20px;
+    .tiktok{border: 1px solid rgba(42, 42, 42, 0.50);color: rgba(42, 42, 42, 1);}
+    .youtube{border: 1px solid rgba(255, 44, 43, 0.50);color: rgba(255, 44, 43, 1);}
+    .g-number{
+        text-align: center;
+        font-size: 12px;
+        font-weight: 300;
+        color: #034C31;
+        column-gap: 8px;
+        row-gap: 8px;
+        div{
+            position: relative;
+            &::before{
+                content: "";
+                position: absolute;
+                width: 1px;
+                right: -6px;
+                top: 9px;
+                height: 20px;
+                background: linear-gradient(90deg, rgba(73, 245, 185, 0.00) 0%, rgba(6, 78, 51, 0.20) 50.48%, rgba(73, 245, 185, 0.00) 100%);
             }
-            &:last-child {
-                margin-bottom: 0;
+            &:last-child::before{
+                display: none;
             }
         }
+        .number{
+            font-size: 14px;
+            font-weight: 500;
+            span{color: #FF5E57;}
+        }
+        p{margin-bottom: 0;}
     }
-    .line-bottom {
-        border-color: #2E2E2E;
-        margin-bottom: 30px;
-    }
-    .logo {
-        text-align: right;
-        img {
-            max-width: 210px;
-        }
-    }
-    .copyright {
-        p {
-            margin-bottom: 0;
-        }
-    }
-    @media (max-width: 991px) {
-        padding: 20px 0;
-        .flexbox {
-            flex-wrap: wrap;
-        }
-        [class*='col_'] {
-            width: 33.33%;
-        }
-        ul {
-            margin-bottom: 15px;
-        }
-    }
-    @media (max-width: 576px) {
-        [class*='col_'] {
-            width: 50%;
-        }
-        .col_5 {
-            width: 100%;
-        }
-        .line-bottom {
-            padding-bottom: 20px;
-        }
-        .logo {
-            text-align: left;
-        }
-        .copyright {
-            grid-template-columns: repeat(1, 1fr);
+    .option-bottom{
+        justify-content: center;
+        column-gap: 12px;
+        row-gap: 12px;     
+        position: relative;
+        padding-top: 15px;
+        margin-top: 15px;
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 100%;   
+            height: 1px;
+            background: linear-gradient(90deg, rgba(73, 245, 185, 0.00) 0%, rgba(6, 78, 51, 0.20) 50.48%, rgba(73, 245, 185, 0.00) 100%); 
+        }   
+        .itemt{
+            border-radius: 4px;
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            &.active{
+                background: #D0EAE2;
+            }
         }
     }
 }
