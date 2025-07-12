@@ -40,19 +40,26 @@
     }
 
 
-    
+
 
     //onCLick
     function onCLick() {
-        
+
 
 
     }
-    //Hover
 
     //slide Gallery
     function swiper() {
-        
+        var swiperFasca = new Swiper(".box-calendar-live .swiper-container", {
+            spaceBetween: 0,
+            loop: false,
+            navigation: {
+                nextEl: ".box-calendar-live .swiper-button-next",
+                prevEl: ".box-calendar-live .swiper-button-prev",
+            },
+            speed: 1000,
+        });
     }
 
 
