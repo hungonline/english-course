@@ -51,8 +51,8 @@ ol.dotted {
 }
 
 .icon-svg {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     fill: currentColor;
     vertical-align: middle;
 }
@@ -137,9 +137,6 @@ u {
 
 .txt_20 {
     font-size: 20px!important;
-    @media (max-width: 991px) {
-        font-size: 18px!important;
-    }
 }
 
 .txt_22 {
@@ -221,6 +218,9 @@ u {
 
 .mb30 {
     margin-bottom: 30px!important;
+    @media (max-width: 991px) {
+        margin-bottom: 15px!important;
+    }
 }
 
 .mb40 {

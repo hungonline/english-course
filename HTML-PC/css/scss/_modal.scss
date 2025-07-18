@@ -1,68 +1,72 @@
 // @import "datepicker.min.scss";
 
 .modal-header{
-    border-bottom:0;
+    border-bottom: 0;
+    align-items: center;
     .modal-title{
-        font-size: 28px;
+        font-size: 16px;
         font-weight: bold;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        color: #023d28;
+        .ic{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #F1F8F5;
+            border-radius: 50%;
+        }
     }
     .close{
         font-family: -webkit-body;
+        margin: 0;
         opacity: 1;
-        font-size: 35px;
+        font-size: 30px;
         outline: 0;
+        color: #ABB0AE;
+        padding: 5px 10px;
+        line-height: 1;
     }
 }
 .modal-body{
     padding-top: 0;
-}
-.modal-content{
-    border: 0;
-}
-.modal-login{
-    .modal-dialog{
-        max-width: 392px;
-    }
-    .modal-header{
-        display: block;
-        padding-right: 50px;
-    }
-    .close{
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        font-size: 45px;
+    font-size: 14px;
+    color: #656867;
+    line-height: 1.6;
+    p{
+        margin-bottom: 10px;
     }
     .form-group{
-        .icon{
-            position: absolute;
-            top: 16px;
-            left: 50px;
-        }
-        .login{
-            background: #F2F2F5;
-            border: 0;
-            padding-left: 90px;
-        }
         .form-control{
-            border-radius: 6px;
-            border: 1px solid #E4E4EB;
-            height: 56px;
+            height: 36px;
             font-size: 14px;
-            transition: 0.2s all;
-            &:focus{
-                border: 1px solid var(--colormain);
+            font-weight: 400;
+            border: 1px solid #68BBA0;
+        }
+        .btn{
+            height: 36px;
+            border-radius: 4px;
+            background: linear-gradient(279deg, #F9A826 0%, #68BBA0 100%);
+            color: #fff;
+            border: 0;
+            font-size: 14px;
+        }
+        &.relative{
+            padding-right: 60px;
+            .btn{
+                position: absolute;
+                right: 0;
+                top: 0;
             }
         }
     }
-    .btn{
-        height: 56px;
-        &.full{
-            width: 100%;
-        }
-        &:hover{
-            background: var(--colormain);
-            color: #fff;
-        }
-    }
+}
+.modal-content{
+   border-radius: 16px;
+}
+.modal-dialog{
+    
 }

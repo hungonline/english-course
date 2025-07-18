@@ -44,9 +44,49 @@
 
     //onCLick
     function onCLick() {
+        $('#vibeji-ham,.close-menu').off('click').on('click', function () {
+            $('.main-left').toggleClass('open');
+            $('body').toggleClass('overflow');
+        });
+        $('.open-comment,.close-comment').off('click').on('click', function () {
+            $('.slide-comment').toggleClass('open');
+            $('body').toggleClass('overflow');
+        });
+    }
 
+    function handleToggleClasses() {
+        const screenWidth = screen.width; 
+        // Gắn sự kiện cho btn-thaoluan
+        $('.btn-thaoluan').off('click').on('click', function () {
+            if (screenWidth <= 1025) {
+                if ($('.main-detail').hasClass('hidden-thaoluan')) {
+                    $('.main-detail').removeClass('hidden-thaoluan').addClass('hidden-menu');
+                } else {
+                    $('.main-detail').addClass('hidden-thaoluan').removeClass('hidden-menu');
+                }
+            } else {
+                $('.main-detail').toggleClass('hidden-thaoluan');
+                $('.main-detail').removeClass('hidden-menu');
+            }
+        });
 
-
+        // Gắn sự kiện cho btn-menu
+        $('.btn-menu').off('click').on('click', function () {
+            if (screenWidth <= 1025) {
+                if ($('.main-detail').hasClass('hidden-menu')) {
+                    $('.main-detail').removeClass('hidden-menu').addClass('hidden-thaoluan');
+                } else {
+                    $('.main-detail').addClass('hidden-menu').removeClass('hidden-thaoluan');
+                }
+            } else {
+                $('.main-detail').toggleClass('hidden-menu');
+                $('.main-detail').removeClass('hidden-thaoluan');
+            }
+        });
+        $('.main-detail').removeClass('hidden-thaoluan hidden-menu');
+        if (screenWidth <= 1280) {
+            $('.main-detail').addClass('hidden-thaoluan');
+        }
     }
 
     //slide Gallery
@@ -66,6 +106,7 @@
     $(function() {
         backToTop();;
         onCLick();
+        handleToggleClasses();
         swiper();
     });
 })(jQuery);
