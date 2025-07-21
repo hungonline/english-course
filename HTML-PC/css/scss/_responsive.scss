@@ -1,10 +1,10 @@
 @media (min-width: 1200px) {
-    .container {
-        max-width: 1190px;
-        &.max {
-            max-width: 1500px;
-        }
-    }
+    // .container {
+    //     max-width: 1190px;
+    //     &.max {
+    //         max-width: 1500px;
+    //     }
+    // }
 }
 
 .hidden-pc {
@@ -50,32 +50,17 @@
     .mt60 {
         margin-top: 30px!important;
     }
-    .padding_40 {
-        padding: 20px 0;
-    }
-    .line-bottom.mb40 {
-        margin-bottom: 20px!important;
-    }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 600px) {
     .hidden-mb {
         display: none;
     }
     .hidden-pc {
         display: block;
     }
-    .pd-24 {
+    .section-folder{
         padding: 15px;
     }
-    .detail_tin {
-        .title-detail {
-            font-size: 20px;
-        }
-        .price-all {
-            .all {
-                font-size: 24px;
-            }
-        }
-    }
+
 }

@@ -102,11 +102,31 @@
         });
     }
 
+    function stickyDetector() {
+        const stickyElements = document.querySelectorAll('.sticky');
 
+        for (const el of stickyElements) {
+            el.insertAdjacentHTML('beforebegin', "<div class='sticky-anchor clearfix'></div>");
+        }
+
+        var observer = new IntersectionObserver(function(entries) {
+            const stickyEl = document.querySelector(".sticky");
+            if (entries[0].intersectionRatio === 0) {
+                stickyEl.classList.add("sticky--active");
+            } else if (entries[0].intersectionRatio === 1) {
+                stickyEl.classList.remove("sticky--active");
+            }
+        }, {
+            threshold: [0, 1]
+        });
+        observer.observe(document.querySelector(".sticky-anchor"));
+
+    }
     $(function() {
         backToTop();;
         onCLick();
         handleToggleClasses();
         swiper();
+        stickyDetector();
     });
 })(jQuery);

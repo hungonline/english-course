@@ -255,17 +255,21 @@ input {
 }
 
 .gap_10 {
-    column-gap: 10px;
-    row-gap: 10px;
+    column-gap: 10px!important;
+    row-gap: 10px!important;
+}
+.gap_16 {
+    column-gap: 16px!important;
+    row-gap: 16px!important;
 }
 .gap_20 {
-    column-gap: 20px;
-    row-gap: 20px;
+    column-gap: 20px!important;
+    row-gap: 20px!important;
 }
 
 .gap_30 {
-    column-gap: 30px;
-    row-gap: 30px;
+    column-gap: 30px!important;
+    row-gap: 30px!important;
 }
 
 @media (min-width: 576px) {
