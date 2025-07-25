@@ -91,7 +91,7 @@
 
     //slide Gallery
     function swiper() {
-        var swiperFasca = new Swiper(".box-calendar-live .swiper-container", {
+        var swiperLiveday = new Swiper(".box-calendar-live .swiper-container", {
             spaceBetween: 0,
             loop: false,
             navigation: {
@@ -100,6 +100,45 @@
             },
             speed: 1000,
         });
+       
+        var swiperCourse = new Swiper(".list-top-course .swiper-container", {
+            slidesPerView: 7,
+            spaceBetween: 16,
+            loop: false,
+            navigation: {
+                nextEl: ".list-top-course .swiper-button-next",
+                prevEl: ".list-top-course .swiper-button-prev",
+            },
+            breakpoints: {
+                1280: {
+                    slidesPerView: 5,
+                },
+                576: {
+                    slidesPerView: 2,
+                }
+            }            
+        });       
+
+        if (screen.width > 600) {
+            var swiperLiveday2 = new Swiper(".calendar-live-folder .swiper-container", {
+                slidesPerView: 4,
+                spaceBetween: 16,
+                loop: false,
+                navigation: {
+                    nextEl: ".calendar-live-folder .swiper-button-next",
+                    prevEl: ".calendar-live-folder .swiper-button-prev",
+                },
+                breakpoints: {
+                    1280: {
+                        slidesPerView: 3,
+                    },
+                    576: {
+                        slidesPerView: 1,
+                    }
+                }            
+            });
+        }
+
     }
 
     function stickyDetector() {
