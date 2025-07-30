@@ -254,6 +254,10 @@ input {
     }
 }
 
+.gap_5 {
+    column-gap: 5px!important;
+    row-gap: 5px!important;
+}
 .gap_10 {
     column-gap: 10px!important;
     row-gap: 10px!important;
@@ -423,10 +427,9 @@ input {
         padding: 2px 24px 2px 0;
     }
     &.big {
-        font-size: 28px;
-        font-weight: bold;
-        border-radius: 35px;
-        text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        font-size: 18px;
+        height: 52px;
+        padding: 0 40px;
     }
     &.medium {
         height: 50px;
@@ -443,6 +446,10 @@ input {
     &.bg-white {
         color: #2F80ED;
         border: 1px solid #2F80ED;
+    }
+    &.bg-main{
+        background: var(--colormain);
+        color: #fff;
     }
     &.free {
         background: #27AE60;
@@ -475,10 +482,19 @@ input {
             font-size: 18px;
         }
     }
+    @media (max-width: 600px) {
+        &.full-mobile{
+            width: 100%;
+        }
+        &.big{
+            font-size: 16px;
+            height: 40px;
+        }
+    }
 }
 
 .color_000 {
-    color: #000
+    color: #000!important
 }
 
 .color-orange {
@@ -503,6 +519,10 @@ input {
 
 .line-bottom {
     border-bottom: 1px solid rgba(107, 119, 154, 0.15);
+}
+
+.line-dashed{
+    border-bottom: 1px dashed rgba(107, 119, 154, 0.15);
 }
 
 .tab-default {
