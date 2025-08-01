@@ -127,6 +127,12 @@
 input {
     outline: 0
 }
+input[type="number"]{
+    &::-webkit-outer-spin-button,&::-webkit-inner-spin-button{
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
 
 // input[type="text"],
 // input[type="password"],
@@ -253,7 +259,10 @@ input {
         1fr);
     }
 }
-
+.gap_2 {
+    column-gap: 2px!important;
+    row-gap: 2px!important;
+}
 .gap_5 {
     column-gap: 5px!important;
     row-gap: 5px!important;
@@ -429,7 +438,6 @@ input {
     &.big {
         font-size: 18px;
         height: 52px;
-        padding: 0 40px;
     }
     &.medium {
         height: 50px;
@@ -451,16 +459,20 @@ input {
         background: var(--colormain);
         color: #fff;
     }
+    &.bg-before{
+        background: #D0EAE2;
+        color: #568775;
+    }
     &.free {
         background: #27AE60;
         border: 1px solid #27AE60;
     }
     &.none {
         background: none;
-        border: 1px solid #DBE2DF;
+        border: 1px solid #034C31;
         &:hover {
-            background: #fff;
-            color: #00234B;
+            background: #034C31;
+            color: #fff;
         }
     }
     &.gray {
@@ -468,8 +480,15 @@ input {
         color: #004FC2;
         border: 1px solid #F3F2F3;
     }
+    &.active{
+        background: var(--colormain);
+        color: #fff;
+    }
     &.txt_black {
         color: #00091c
+    }
+    &:focus{
+        outline: 0;
     }
     @media (max-width: 1199px) {
         &.big {
@@ -503,6 +522,9 @@ input {
 
 .color-gray {
     color: #656867
+}
+.color-gray2 {
+    color: #DBE2DF
 }
 
 .color-main {
@@ -1040,11 +1062,13 @@ input {
         resize: none;
     }
     .form-control {
-        border-radius: 30px;
-        border: 1px solid #69727d;
-        height: 55px;
-        padding: 5px 20px;
-        font-size: 16px;
+        border: 0;
+        border-radius: 0;
+        border-bottom: 1px solid #abb0ae;
+        background: none;
+        font-weight: 300;
+        padding: 10px;
+        color: var(--colormain);
         transition-duration: 200ms;
         transition-property: all;
         transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
@@ -1052,7 +1076,20 @@ input {
         &:active {
             outline: 0;
             box-shadow: none;
-            border: 1px solid #004fc2;
+            border-bottom: 1px solid var(--colormain);
+        }
+    }
+    .relative {
+        .form-control{
+            padding-left: 35px;
+        }
+        .icon-svg{
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 24px;
+            height: 24px;
+            color: var(--colormain);            
         }
     }
     .error {

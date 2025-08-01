@@ -215,12 +215,15 @@
             <div class="main-detail clearfix">
                 <div class="main-detail__left">
                     <h2 class="title-cate color-main text-left mb30">Danh sách cac popup thông báo</h2>
+                    <p data-toggle="modal" data-target="#popup-ttk-success">Popup tạo tài khoản thành công</p>
+                    <p data-toggle="modal" data-target="#popup-login-success">Popup đăng nhập thành công</p>
                     <p data-toggle="modal" data-target="#popupbantin">Popup Đăng ký nhận tin</p>
                     <p data-toggle="modal" data-target="#popupthongtin">Popup Thông tin</p>
                     <p data-toggle="modal" data-target="#popupsuport">Popup Hỗ trợ khách hàng</p>
                     <p data-toggle="modal" data-target="#popupbaomat">Popup Chính sách bảo mật</p>
                     <p data-toggle="modal" data-target="#popupriengtu">Popup Quyền riêng tư</p>
                     <p data-toggle="modal" data-target="#popupthanhtoan">Popup Thanh toán</p>
+                    <p data-toggle="modal" data-target="#popup-activate-card">Popup kích hoạt thẻ</p>
                 </div>
                 <div class="main-detail__right">
                     <div class="slide-comment">
@@ -464,6 +467,56 @@
     </div>  
    
     
+    <!-- Popup Tạo tài khoản thành công -->
+    <div class="modal modal-login fade" id="popup-ttk-success">
+        <div class="modal-dialog" style="width: 400px;">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <span class="ic">
+                            <svg class="icon-svg">
+                                <use xlink:href="images/icons/icon.svg#login"></use>
+                            </svg>                            
+                        </span>
+                        <span>Tạo tài khoản thành công</span>
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <p>Tắt tự đông sau 3s</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup Đăng nhập thành công -->
+    <div class="modal modal-login fade" id="popup-login-success">
+        <div class="modal-dialog" style="width: 400px;">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <span class="ic">
+                            <svg class="icon-svg">
+                                <use xlink:href="images/icons/icon.svg#login"></use>
+                            </svg>                            
+                        </span>
+                        <span>Đăng nhập thành công</span>
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <p>Tắt tự đông sau 3s</p>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
     <!-- Popup Đăng ký nhận email -->
     <div class="modal modal-login fade" id="popupbantin">
         <div class="modal-dialog" style="width: 300px;">
@@ -479,12 +532,10 @@
                 <!-- Modal body -->
                 <div class="modal-body">
                     <p>Nhập địa chỉ email của bạn</p>
-                    <div class="form-group relative">
+                    <div class="form-group relative in-line">
                         <input type="text" class="form-control login" id="" placeholder="Đăng nhập với Gmail">
                         <button type="submit" class="btn">Gửi</button>
                     </div>
-
-
                 </div>
 
 
@@ -628,7 +679,44 @@
         </div>
     </div>
 
-
+    <!-- Popup Kích hoạt Thẻ khoá học -->
+    <div class="modal modal-login fade" id="popup-activate-card">
+        <div class="modal-dialog" style="width: 500px;">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <span>Kích hoạt Thẻ khoá học</span>
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body form-default">
+                    <div class="form-group">
+                        <div class="relative">
+                            <svg class="icon-svg">
+                                <use xlink:href="images/icons/icon.svg#atm"></use>
+                            </svg>
+                            <input type="number" class="form-control" placeholder="Nhập mã số thẻ">                        
+                        </div>
+                    </div>  
+                    <div class="flexbox align-center font-weight-light txt_16 gap_10 mb15" style="background: #F6FAF8;border-radius: 8px;padding: 8px 16px;">
+                        <span class="ic">
+                            <svg class="icon-svg">
+                                <use xlink:href="images/icons/icon.svg#info"></use>
+                            </svg>                            
+                        </span>
+                        <p>
+                            Mã kích hoạt gồm 6 ký tự bao gồm chữ và số </br>
+                            VD: 123ABC </br>
+                            Hotline CSKH: <a class="text-revert" style="color: #09C;" href="" title="">0966559155</a>
+                        </p>
+                    </div>   
+                    <div class="text-center"><a class="btn-default medium bg-main font-weight-light" href="#" style="padding: 0 30px;">Sử dụng thẻ</a></div>              
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="overlay-bg"></div>
     <!--Jquery lib-->

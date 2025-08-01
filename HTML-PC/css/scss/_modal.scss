@@ -1,5 +1,11 @@
 // @import "datepicker.min.scss";
-
+.modal-dialog{
+    @media (max-width: 600px) {
+        width: 100% !important;
+        margin: 0;
+        padding: 16px;
+    }
+}
 .modal-header{
     border-bottom: 0;
     align-items: center;
@@ -38,8 +44,9 @@
     line-height: 1.6;
     p{
         margin-bottom: 10px;
+        &:last-child{margin-bottom: 0;}
     }
-    .form-group{
+    .in-line{
         .form-control{
             height: 36px;
             font-size: 14px;
@@ -65,8 +72,8 @@
     }
 }
 .modal-content{
-   border-radius: 16px;
-}
-.modal-dialog{
-    
+    border-radius: 16px;
+    @media (max-width: 600px) {
+        border-radius: 8px;
+    }   
 }

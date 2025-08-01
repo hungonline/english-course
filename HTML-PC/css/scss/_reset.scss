@@ -55,6 +55,7 @@ ol.dotted {
     height: 20px;
     fill: currentColor;
     vertical-align: middle;
+    &.min{width: 16px;height: 16px;}
 }
 
 img {
@@ -72,7 +73,9 @@ a {
         color: var(--colormain)
     }
 }
-
+.text-revert{
+    text-decoration: revert;
+}
 p {
     &:last-child {
         margin-bottom: 0;
@@ -137,16 +140,22 @@ u {
 
 .txt_20 {
     font-size: 20px!important;
+    @media (max-width: 991px) {
+        font-size: 16px!important;
+    }     
 }
 
 .txt_22 {
-    font-size: 22px!important
+    font-size: 22px!important;
+    @media (max-width: 991px) {
+        font-size: 18px!important;
+    }    
 }
 
 .txt_24 {
     font-size: 24px!important;
     @media (max-width: 991px) {
-        font-size: 18px!important;
+        font-size: 20px!important;
     }
 }
 
@@ -443,5 +452,6 @@ u {
 .form-control {
     &:focus {
         box-shadow: none;
+        outline: 0;
     }
 }

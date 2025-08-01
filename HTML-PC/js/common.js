@@ -52,40 +52,65 @@
             $('.slide-comment').toggleClass('open');
             $('body').toggleClass('overflow');
         });
+        $(".toggle-password").click(function() {
+            $(this).toggleClass("show");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+        $('.option-bottom .ic').click(function() {
+            $('.option-bottom .ic').removeClass('active');
+            if (!$(this).hasClass('active')) {
+                $(this).addClass('active');
+            } else {
+                $(this).removeClass('active');
+            }
+        });
+        $('.option-bottom .close').click(function() {
+            $('.option-bottom .ic').removeClass('active');
+        });
+
+        $(".question-section-mobile .btn").click(function() {
+            $('.question-section').addClass("show");
+        });
+        $(".close-question").click(function() {
+            $('.question-section').removeClass("show");
+        });
     }
 
     function handleToggleClasses() {
         const screenWidth = screen.width; 
         // Gắn sự kiện cho btn-thaoluan
         $('.btn-thaoluan').off('click').on('click', function () {
-            if (screenWidth <= 1025) {
+            if (screenWidth <= 1280) {
                 if ($('.main-detail').hasClass('hidden-thaoluan')) {
                     $('.main-detail').removeClass('hidden-thaoluan').addClass('hidden-menu');
                 } else {
-                    $('.main-detail').addClass('hidden-thaoluan').removeClass('hidden-menu');
+                    $('.main-detail').addClass('hidden-thaoluan')
                 }
             } else {
                 $('.main-detail').toggleClass('hidden-thaoluan');
-                $('.main-detail').removeClass('hidden-menu');
             }
         });
 
         // Gắn sự kiện cho btn-menu
         $('.btn-menu').off('click').on('click', function () {
-            if (screenWidth <= 1025) {
+            if (screenWidth <= 1280) {
                 if ($('.main-detail').hasClass('hidden-menu')) {
                     $('.main-detail').removeClass('hidden-menu').addClass('hidden-thaoluan');
                 } else {
-                    $('.main-detail').addClass('hidden-menu').removeClass('hidden-thaoluan');
+                    $('.main-detail').addClass('hidden-menu')
                 }
             } else {
                 $('.main-detail').toggleClass('hidden-menu');
-                $('.main-detail').removeClass('hidden-thaoluan');
             }
         });
         $('.main-detail').removeClass('hidden-thaoluan hidden-menu');
         if (screenWidth <= 1280) {
-            $('.main-detail').addClass('hidden-thaoluan');
+            $('.main-detail').addClass('hidden-menu');
         }
     }
 

@@ -27,7 +27,7 @@
 }
 
 @media (max-width: 991px) {
-    .overlay {
+     .hidden-ipad,.overlay {
         display: none
     }
     .box_stream {
