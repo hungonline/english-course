@@ -127,8 +127,10 @@
 input {
     outline: 0
 }
-input[type="number"]{
-    &::-webkit-outer-spin-button,&::-webkit-inner-spin-button{
+
+input[type="number"] {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
     }
@@ -163,7 +165,7 @@ input[type="number"]{
 .scroll-height {
     max-height: 300px;
     overflow-y: scroll;
-    padding-right: 8px;
+    padding-right: 4px;
     &::-webkit-scrollbar {
         width: 6px;
     }
@@ -259,22 +261,27 @@ input[type="number"]{
         1fr);
     }
 }
+
 .gap_2 {
     column-gap: 2px!important;
     row-gap: 2px!important;
 }
+
 .gap_5 {
     column-gap: 5px!important;
     row-gap: 5px!important;
 }
+
 .gap_10 {
     column-gap: 10px!important;
     row-gap: 10px!important;
 }
+
 .gap_16 {
     column-gap: 16px!important;
     row-gap: 16px!important;
 }
+
 .gap_20 {
     column-gap: 20px!important;
     row-gap: 20px!important;
@@ -410,6 +417,7 @@ input[type="number"]{
 .radius_10 {
     border-radius: 10px;
 }
+
 .radius_16 {
     border-radius: 16px;
 }
@@ -455,13 +463,13 @@ input[type="number"]{
         color: #2F80ED;
         border: 1px solid #2F80ED;
     }
-    &.bg-main{
+    &.bg-main {
         background: var(--colormain);
         color: #fff;
     }
-    &.bg-before{
+    &.bg-before {
         background: #D0EAE2;
-        color: #568775;
+        color: var(--colormain);
     }
     &.free {
         background: #27AE60;
@@ -480,14 +488,14 @@ input[type="number"]{
         color: #004FC2;
         border: 1px solid #F3F2F3;
     }
-    &.active{
+    &.active {
         background: var(--colormain);
         color: #fff;
     }
     &.txt_black {
         color: #00091c
     }
-    &:focus{
+    &:focus {
         outline: 0;
     }
     @media (max-width: 1199px) {
@@ -502,10 +510,10 @@ input[type="number"]{
         }
     }
     @media (max-width: 600px) {
-        &.full-mobile{
+        &.full-mobile {
             width: 100%;
         }
-        &.big{
+        &.big {
             font-size: 16px;
             height: 40px;
         }
@@ -523,6 +531,7 @@ input[type="number"]{
 .color-gray {
     color: #656867
 }
+
 .color-gray2 {
     color: #DBE2DF
 }
@@ -543,7 +552,7 @@ input[type="number"]{
     border-bottom: 1px solid rgba(107, 119, 154, 0.15);
 }
 
-.line-dashed{
+.line-dashed {
     border-bottom: 1px dashed rgba(107, 119, 154, 0.15);
 }
 
@@ -619,7 +628,9 @@ input[type="number"]{
         white-space: nowrap;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
-        &::-webkit-scrollbar{display: none;}
+        &::-webkit-scrollbar {
+            display: none;
+        }
         a {
             display: inline-block;
             .sup {
@@ -748,12 +759,12 @@ input[type="number"]{
             }
         }
     }
-    &.video-top{
-        .article-thumb{
+    &.video-top {
+        .article-thumb {
             width: 100%;
             border-radius: 16px;
         }
-        .title_new{
+        .title_new {
             font-size: 24px;
             color: var(--colormain);
             @media (max-width: 991px) {
@@ -1024,7 +1035,7 @@ input[type="number"]{
         padding: 0;
         line-height: 38px;
         outline: 0;
-        svg{
+        svg {
             width: 15px;
             height: 15px;
         }
@@ -1080,16 +1091,16 @@ input[type="number"]{
         }
     }
     .relative {
-        .form-control{
+        .form-control {
             padding-left: 35px;
         }
-        .icon-svg{
+        .icon-svg {
             position: absolute;
             left: 0;
             top: 10px;
             width: 24px;
             height: 24px;
-            color: var(--colormain);            
+            color: var(--colormain);
         }
     }
     .error {

@@ -27,7 +27,8 @@
 }
 
 @media (max-width: 991px) {
-     .hidden-ipad,.overlay {
+    .hidden-ipad,
+    .overlay {
         display: none
     }
     .box_stream {
@@ -59,8 +60,14 @@
     .hidden-pc {
         display: block;
     }
-    .section-folder{
+    .section-folder {
         padding: 15px;
     }
-
+    .center-mobile {
+        text-align: center;
+        .text-left,
+        .text-right {
+            text-align: center!important;
+        }
+    }
 }

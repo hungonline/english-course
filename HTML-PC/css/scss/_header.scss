@@ -76,13 +76,14 @@
             flex-shrink: 0;
         }
     }
-    .pagination-lesson{
+    .pagination-lesson {
         display: none;
         align-items: center;
-        column-gap: 10px;  
-        .btn-lesson{
+        column-gap: 10px;
+        .btn-lesson,
+        .btn-bxh {
             display: flex;
-            column-gap: 2px;        
+            column-gap: 2px;
             height: 36px;
             min-width: 45px;
             padding: 0 8px;
@@ -93,9 +94,18 @@
             border-radius: 4px;
             font-size: 12px;
             color: #656867;
-            svg{
+            svg {
                 width: 12px;
                 height: 12px;
+            }
+        }
+        .btn-bxh {
+            background: #F4A100;
+            border: 1px solid #F4A100;
+            color: #034C31;
+            svg {
+                width: 20px;
+                height: 20px;
             }
         }
         .open-comment {
@@ -137,13 +147,13 @@
             }
         }
     }
-    &.space-between{
+    &.space-between {
         justify-content: space-between;
-        .breadcrumb-course{
+        .breadcrumb-course {
             border-bottom: 0;
             height: 40px;
         }
-        .my-notifi{
+        .my-notifi {
             color: #656867;
         }
     }
@@ -152,22 +162,23 @@
             column-gap: 12px;
             row-gap: 12px;
         }
-        &.detail{
-            .pagination-lesson{
+        &.detail {
+            .pagination-lesson {
                 display: flex;
             }
-            .my-user{
+            .my-user {
                 display: none;
             }
-        }        
-        
+        }
     }
     @media (max-width: 600px) {
         height: 60px;
         background: #ffffff;
         border-bottom: 1px solid #DBE2DF;
         justify-content: space-between;
-        .breadcrumb-course{display: none;}
+        .breadcrumb-course {
+            display: none;
+        }
         #vibeji-ham {
             display: block;
         }
@@ -188,12 +199,17 @@
                     border: 0;
                 }
             }
-        }  
-        &.detail{
-            .logo{
-                span{display: none;}
-            }     
-        } 
+        }
+        &.detail {
+            .logo {
+                span {
+                    display: none;
+                }
+            }
+        }
+        &.sticky {
+            position: sticky;
+        }
     }
 }
 
@@ -298,12 +314,12 @@
             background: #f9f9f9;
             border-radius: 5px;
         }
-        &:hover{
+        &:hover {
             &::-webkit-scrollbar-thumb {
                 width: 5px;
                 background-color: rgba(0, 0, 0, 0.2);
             }
-        }        
+        }
         ul {
             border-bottom: 1px solid #DBE2DF;
             li {

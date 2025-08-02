@@ -44,12 +44,16 @@
 
     //onCLick
     function onCLick() {
-        $('#vibeji-ham,.close-menu').off('click').on('click', function () {
+        $('#vibeji-ham,.close-menu').off('click').on('click', function() {
             $('.main-left').toggleClass('open');
             $('body').toggleClass('overflow');
         });
-        $('.open-comment,.close-comment').off('click').on('click', function () {
+        $('.open-comment,.close-comment').off('click').on('click', function() {
             $('.slide-comment').toggleClass('open');
+            $('body').toggleClass('overflow');
+        });
+        $('.btn-bxh,.close-bxh').off('click').on('click', function() {
+            $('.list-ranking-detail').toggleClass('open');
             $('body').toggleClass('overflow');
         });
         $(".toggle-password").click(function() {
@@ -73,18 +77,28 @@
             $('.option-bottom .ic').removeClass('active');
         });
 
+
         $(".question-section-mobile .btn").click(function() {
+            $('.question-section-mobile .btn').removeClass('active');
+            if (!$(this).hasClass('active')) {
+                $(this).addClass('active');
+            } else {
+                $(this).removeClass('active');
+            }
             $('.question-section').addClass("show");
+            $('body').addClass('overflow');
         });
+
         $(".close-question").click(function() {
             $('.question-section').removeClass("show");
+            $('body').removeClass('overflow');
         });
     }
 
     function handleToggleClasses() {
-        const screenWidth = screen.width; 
+        const screenWidth = screen.width;
         // Gắn sự kiện cho btn-thaoluan
-        $('.btn-thaoluan').off('click').on('click', function () {
+        $('.btn-thaoluan').off('click').on('click', function() {
             if (screenWidth <= 1280) {
                 if ($('.main-detail').hasClass('hidden-thaoluan')) {
                     $('.main-detail').removeClass('hidden-thaoluan').addClass('hidden-menu');
@@ -97,7 +111,7 @@
         });
 
         // Gắn sự kiện cho btn-menu
-        $('.btn-menu').off('click').on('click', function () {
+        $('.btn-menu').off('click').on('click', function() {
             if (screenWidth <= 1280) {
                 if ($('.main-detail').hasClass('hidden-menu')) {
                     $('.main-detail').removeClass('hidden-menu').addClass('hidden-thaoluan');
@@ -125,7 +139,7 @@
             },
             speed: 1000,
         });
-       
+
         var swiperCourse = new Swiper(".list-top-course .swiper-container", {
             slidesPerView: 7,
             spaceBetween: 16,
@@ -141,8 +155,8 @@
                 576: {
                     slidesPerView: 2.7,
                 }
-            }            
-        });       
+            }
+        });
 
         if (screen.width > 600) {
             var swiperLiveday2 = new Swiper(".calendar-live-folder .swiper-container", {
@@ -160,7 +174,7 @@
                     576: {
                         slidesPerView: 1,
                     }
-                }            
+                }
             });
         }
 
