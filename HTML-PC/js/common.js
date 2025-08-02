@@ -46,15 +46,15 @@
     function onCLick() {
         $('#vibeji-ham,.close-menu').off('click').on('click', function() {
             $('.main-left').toggleClass('open');
-            $('body').toggleClass('overflow');
+            $('html').toggleClass('overflow');
         });
         $('.open-comment,.close-comment').off('click').on('click', function() {
             $('.slide-comment').toggleClass('open');
-            $('body').toggleClass('overflow');
+            $('html').toggleClass('overflow');
         });
         $('.btn-bxh,.close-bxh').off('click').on('click', function() {
             $('.list-ranking-detail').toggleClass('open');
-            $('body').toggleClass('overflow');
+            $('html').toggleClass('overflow');
         });
         $(".toggle-password").click(function() {
             $(this).toggleClass("show");
@@ -86,12 +86,12 @@
                 $(this).removeClass('active');
             }
             $('.question-section').addClass("show");
-            $('body').addClass('overflow');
+            $('html').addClass('overflow');
         });
 
         $(".close-question").click(function() {
             $('.question-section').removeClass("show");
-            $('body').removeClass('overflow');
+            $('html').removeClass('overflow');
         });
     }
 
