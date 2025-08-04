@@ -3339,7 +3339,7 @@
         min-height: 100dvh;
     }
     &__left{
-        background: url(images/graphics/img-login.png);
+        background: var(--colormain) url(images/graphics/img-login.png);
         padding: 40px;
         color: #fff;
         background-size: cover;
