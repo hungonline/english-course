@@ -1834,7 +1834,7 @@
             padding: 15px;
         }
         &__col2 {
-            padding: 20px 15px;
+            padding: 20px 15px 5px 15px;
             .video-top {
                 background: #F1F8F5;
                 background: #f1f8f5;
@@ -3321,13 +3321,12 @@
 
 // Login / Register
 .page-login {
-    height: 100dvh;
-    max-width: 1400px;
+    min-height: 100dvh;
     margin: auto;
     .flex-wrap {
         display: flex;
         flex-wrap: wrap;
-        height: 100%;
+        min-height: 100dvh;
         align-content: start;
     }
     .topbar,
@@ -3337,9 +3336,31 @@
     &__left,
     &__right {
         width: 50%;
+        min-height: 100dvh;
+    }
+    &__left{
+        background: url(images/graphics/img-login.png);
+        padding: 40px;
+        color: #fff;
+        background-size: cover;
+        background-position: bottom center;
+        .logo{
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            &:hover{color: #fff;}
+        }
+        .title{
+            font-weight: 500;
+            font-size: 32px;
+            line-height: 1.4;
+        }
     }
     &__right {
-        padding: 100px 60px;
+        padding: 5% 7.8%;
         position: relative;
         .close-menu {
             position: absolute;
@@ -3348,13 +3369,18 @@
         }
     }
     .form-login {
-        max-width: 500px;
         margin: 0 auto;
         font-size: 16px;
         font-weight: 300;
         .error {
             color: red;
             font-size: 14px;
+        }
+        .btn-default{
+            &.bg-before{
+                color: #568775;
+            }
+            &.active{color: #fff;}
         }
         .form-control {
             border: 0;
@@ -3409,7 +3435,7 @@
             gap: 3px;
             justify-content: center;
             color: #656867;
-            margin-top: 150px;
+            margin-top: 200px;
         }
     }
     .login-social {
@@ -3422,6 +3448,9 @@
             height: 50px;
             gap: 10px;
             margin-bottom: 30px;
+            img{
+                width: 47px;
+            }
         }
     }
     .step-reset-pass {
@@ -3432,7 +3461,7 @@
             font-size: 14px;
             font-weight: 500;
             color: #656867;
-            width: 33.33%;
+            width: 50%;
             position: relative;
             &::after {
                 content: "";
@@ -3482,12 +3511,45 @@
         }
     }
     @media (max-width: 1025px) {
+        &__left{
+            padding: 30px;
+            .logo{
+                margin-bottom: 20px;
+            }
+            .title{font-size: 24px;}
+        }
         &__right {
             padding: 40px;
             .title-cate {
                 font-size: 24px;
             }
         }
+    }
+    @media (max-width: 991px) {
+        &__left{
+            padding: 20px;
+            .title{font-size: 20px;}
+        }
+        &__right {
+            padding: 20px;
+            .title-cate {
+                font-size: 20px;
+            }
+        }
+        .form-login {
+            font-size: 15px;
+            .login-social {
+                a {
+                    height: 45px;
+                    gap: 10px;
+                    margin-bottom: 20px;
+                    img{
+                        width: 40px;
+                    }
+                }
+            }            
+        }
+
     }
     @media (max-width: 600px) {
         display: block;
@@ -3499,11 +3561,17 @@
         }
         &__left {
             width: 100%;
+            background: none;
+            min-height:auto;
+            padding: 0;
             .topbar {
                 display: flex;
             }
             .img-login {
                 display: none;
+            }
+            .logo{
+                margin-bottom: 0;
             }
         }
         &__right {
@@ -3615,7 +3683,7 @@
             bottom: 0;
             -webkit-transition: all .25s ease-in-out;
             transition: all .25s ease-in-out;
-            z-index: 1001;
+            z-index: 1002;
             padding: 24px 24px 16px 24px !important;
             width: 100%;
             border-top: 1px solid #dbe2df;
@@ -3757,6 +3825,7 @@
                     .ic {
                         border: 2px solid var(--colormain);
                         color: var(--colormain);
+                        background: #abd5c6;
                     }
                 }
                 &.suggest {
@@ -3987,13 +4056,32 @@
             }
             .point {
                 span {
-                    color: #222;
+                    color: #023D28;
                 }
             }
             .review {
                 border: 1px solid #656867;
                 border-radius: 4px;
                 padding: 5px 8px;
+            }
+        }
+        &.full{
+            border: 0;
+            padding: 0;
+            li {
+                font-size: 14px;
+                .gap_30 {
+                    .ic{
+                        width: 125px;
+                        gap: 5px;
+                        padding: 0 5px;
+                    }
+                }
+            }
+            @media (max-width: 1480px) {
+                li {
+                    .flexbox.gap_16{display: none;}
+                }               
             }
         }
     }
@@ -4146,8 +4234,8 @@
         bottom: 71px;
         -webkit-transition: all .25s ease-in-out;
         transition: all .25s ease-in-out;
-        z-index: 1000;
-        padding: 36px 24px 16px 24px !important;
+        z-index: 1001;
+        padding: 46px 24px 16px 24px !important;
         width: 100%;
         border-bottom: 1px solid #dbe2df;
         box-shadow: rgba(0, 0, 0, .1) 0 5px 20px 10px;
@@ -4155,7 +4243,7 @@
         visibility: hidden;
         .scroll,
         .list {
-            max-height: calc(100dvh - 123px);
+            max-height: calc(100dvh - 195px);
             overflow-x: auto;
         }
         .padding-line-bottom {
@@ -4174,6 +4262,7 @@
             position: absolute;
             right: 20px;
             top: 10px;
+            font-size: 0;
         }
         &.show {
             opacity: 1;
@@ -4200,8 +4289,9 @@
     background: #fff;
     z-index: 1001;
     .test-time {
-        padding: 8px 15px;
+        padding: 0 15px;
         width: 100%;
+        height: 60px;
         .countdown {
             .item_countdown {
                 &::after {
@@ -4230,7 +4320,7 @@
     background: #fff;
     position: fixed;
     bottom: 0;
-    z-index: 1000;
+    z-index: 1001;
     left: 0;
     right: 0;
     box-shadow: rgba(0, 0, 0, .1) 0 5px 20px 10px;

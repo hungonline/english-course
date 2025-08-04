@@ -32,7 +32,19 @@
                         </a>
                     </div>               
                 </div>
-                <div class="img-login"><img src="images/graphics/img-login.png" alt=""></div>
+                <div class="img-login">
+                    <div class="text-post">
+                        <a class="logo" href="home.html" title="English Course">
+                            <img src="images/graphics/logo.png" alt="English Course Logo">
+                            <span>Phù thủy Hóa Học</span>
+                        </a>
+                        <h2 class="title">
+                            Nền tảng học Hóa thú vị và hiệu </br>
+                            quả cho học sinh phổ thông
+                        </h2>
+                    </div>
+                    <img src="images/graphics/img-login.png" alt="">
+                </div>
             </div>
             <div class="page-login__right">
                 <a class="close-menu" href="javascript:;">
@@ -41,15 +53,11 @@
                     </svg>
                 </a>
                 <div class="form-login">
-                    <h2 class="title-cate txt-32 color-main text-center mb30">Đăng nhập / Tạo tài khoản</h2>
+                    <h2 class="title-cate txt-32 color-main text-center mb30">Tạo tài khoản</h2>
                     <div class="login-social">
                         <a href="#">
                             <img src="images/icons/ic-google.png" alt="">
                             Đăng nhập bằng Google
-                        </a>
-                        <a href="#">
-                            <img src="images/icons/ic-facebook.png" alt="">
-                            Đăng nhập bằng Facebook
                         </a>
                     </div>
                     <div class="text-center mb30">-HOẶC-</div>
@@ -72,6 +80,14 @@
                     <div class="form-group">
                         <div class="relative">
                             <svg class="icon-svg">
+                                <use xlink:href="images/icons/icon.svg#email"></use>
+                            </svg>
+                            <input type="text" class="form-control" placeholder="Email">                        
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="relative">
+                            <svg class="icon-svg">
                                 <use xlink:href="images/icons/icon.svg#phone"></use>
                             </svg>
                             <input type="text" class="form-control" placeholder="Số điện thoại">                        
@@ -83,6 +99,19 @@
                                 <use xlink:href="images/icons/icon.svg#password"></use>
                             </svg>
                             <input id="password-field" type="password" class="form-control" placeholder="Mật khẩu"> 
+                            <span toggle="#password-field" class="toggle-password">
+                                <svg class="icon-svg">
+                                    <use xlink:href="images/icons/icon.svg#view"></use>
+                                </svg>                                
+                            </span>                                                   
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="relative">
+                            <svg class="icon-svg">
+                                <use xlink:href="images/icons/icon.svg#password"></use>
+                            </svg>
+                            <input id="password-field" type="password" class="form-control" placeholder="Nhập lại mật khẩu"> 
                             <span toggle="#password-field" class="toggle-password">
                                 <svg class="icon-svg">
                                     <use xlink:href="images/icons/icon.svg#view"></use>
