@@ -182,23 +182,28 @@
 
     function stickyDetector() {
         const stickyElements = document.querySelectorAll('.sticky');
+        // Nếu không có phần tử sticky thì thoát luôn, tránh lỗi
+        if (stickyElements.length === 0) return;
 
-        for (const el of stickyElements) {
-            el.insertAdjacentHTML('beforebegin', "<div class='sticky-anchor clearfix'></div>");
-        }
+        stickyElements.forEach(stickyEl => {
+            // Thêm anchor phía trước nếu chưa tồn tại
+            const anchor = document.createElement('div');
+            anchor.className = 'sticky-anchor clearfix';
+            stickyEl.parentNode.insertBefore(anchor, stickyEl);
 
-        var observer = new IntersectionObserver(function(entries) {
-            const stickyEl = document.querySelector(".sticky");
-            if (entries[0].intersectionRatio === 0) {
-                stickyEl.classList.add("sticky--active");
-            } else if (entries[0].intersectionRatio === 1) {
-                stickyEl.classList.remove("sticky--active");
-            }
-        }, {
-            threshold: [0, 1]
+            const observer = new IntersectionObserver(function(entries) {
+                const entry = entries[0];
+                if (entry.intersectionRatio === 0) {
+                    stickyEl.classList.add("sticky--active");
+                } else if (entry.intersectionRatio === 1) {
+                    stickyEl.classList.remove("sticky--active");
+                }
+            }, {
+                threshold: [0, 1]
+            });
+
+            observer.observe(anchor);
         });
-        observer.observe(document.querySelector(".sticky-anchor"));
-
     }
     $(function() {
         backToTop();;
