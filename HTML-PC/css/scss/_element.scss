@@ -52,7 +52,7 @@
     &::before {
         content: "";
         position: absolute;
-        background-color: #f1f8f5;
+        background-color: var(--bg-main);
         height: 3px;
         left: 0;
         right: 380px;
@@ -85,7 +85,7 @@
             width: 100%;
         }
         .tab-default {
-            border-bottom: 3px solid #f1f8f5;
+            border-bottom: 3px solid var(--bg-main);
             a {
                 &.active {
                     &::before {
@@ -657,7 +657,7 @@
             }
             .countdown {
                 border-radius: 8px;
-                background: #f1f8f5;
+                background: var(--bg-main);
                 gap: 15px;
                 padding: 4px 6px;
             }
@@ -1365,7 +1365,7 @@
 }
 
 .box-live-border {
-    border-bottom: 3px solid #f1f8f5;
+    border-bottom: 3px solid var(--bg-main);
     margin-bottom: 30px;
     padding-bottom: 30px;
     @media (max-width: 600px) {
@@ -1475,6 +1475,12 @@
                 color: #2E8B57;
                 background: url(images/graphics/ic-thaoluan.png) no-repeat;
                 background-position: right;
+            }
+            &.kq{
+                span{
+                    background: url(images/graphics/ic-ketqua.png) no-repeat;
+                    background-position: right;                    
+                }
             }
         }
         .pagination-lesson {
@@ -1675,6 +1681,8 @@
                 }
             }
             .lesson-list {
+                border: 0;
+                border-radius: 0;
                 .lesson-title {
                     background: none;
                     border-bottom: 1px solid #dbe2df;
@@ -1695,6 +1703,7 @@
                     border-bottom: 1px solid #dbe2df;
                 }
                 .lesson {
+                    padding-right: 10px;
                     .title {
                         font-size: 16px;
                     }
@@ -1706,51 +1715,53 @@
                 border-bottom: 0;
                 padding: 15px 0;
             }
-            .lesson-list {
-                .item {
-                    margin-bottom: 15px;
-                }
-            }
         }
+    }
+    &__col1{
+        border-right: 1px dashed #dbe2df;
     }
     &__col2 {
         padding: 30px;
-        border-right: 1px dashed #dbe2df;
-        border-left: 1px dashed #dbe2df;
+        min-height: 90vh;
         width: 100%;
         background: #F1F8F5;
     }
+    &__col3{
+        border-left: 1px dashed #dbe2df;
+    }
     &.hidden-menu {
-        .main-detail__col1 {
-            width: 0px!important;
-            height: 0;
-            background: none!important;
-            .btn-menu {
-                position: absolute;
-                left: -1px;
-                z-index: 2;
-                top: -1px;
-                font-size: 0;
-                width: 50px;
-                height: 50px;
-                background: rgba(255, 255, 255, 0.80);
-                border-radius: 0px 8px 8px 0px;
-                border: 1px solid #DBE2DF;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: #656867;
-                .icon-svg {
-                    margin-left: 3px;
+        @media (min-width: 992px) {
+            .main-detail__col1 {
+                width: 0px!important;
+                height: 0;
+                background: none!important;
+                .btn-menu {
+                    position: absolute;
+                    left: -1px;
+                    z-index: 2;
+                    top: -1px;
+                    font-size: 0;
+                    width: 50px;
+                    height: 50px;
+                    background: rgba(255, 255, 255, 0.80);
+                    border-radius: 0px 8px 8px 0px;
+                    border: 1px solid #DBE2DF;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #656867;
+                    .icon-svg {
+                        margin-left: 3px;
+                    }
                 }
-            }
-            .padding-line-bottom {
-                border-bottom: 0;
-                padding: 0;
-            }
-            .width-none {
-                opacity: 0;
-                overflow: hidden;
+                .padding-line-bottom {
+                    border-bottom: 0;
+                    padding: 0;
+                }
+                .width-none {
+                    opacity: 0;
+                    overflow: hidden;
+                }
             }
         }
     }
@@ -1803,7 +1814,7 @@
         }
     }
     &.detail-tailieu {
-        background: #f1f8f5;
+        background: var(--bg-main);
         .main-detail__col1 {
             width: 200px;
         }
@@ -1835,15 +1846,16 @@
         &__col3 {
             width: 100%;
             padding: 0;
+            border-right: 0;
+            border-left: 0;
+
         }
         &__col1 {
             order: 2;
-            padding: 0 15px;
+            padding: 0 15px 20px 15px;
         }
         &__col2 {
             order: 1;
-            border-right: 0;
-            border-left: 0;
         }
         .hidden-tablet {
             display: none;
@@ -1855,10 +1867,15 @@
             padding: 15px;
         }
         &__col2 {
-            padding: 20px 15px 5px 15px;
+            padding: 20px 15px;
+            .mb30{
+                &:last-child {
+                    margin-bottom: 0!important;
+                }
+            }
             .video-top {
                 background: #F1F8F5;
-                background: #f1f8f5;
+                background: var(--bg-main);
                 border-bottom: 1px solid #dbe2df;
                 margin-top: -20px;
                 margin-left: -15px;
@@ -1995,7 +2012,7 @@
         }
         .input-mobile {
             width: 100%;
-            background: #f1f8f5;
+            background: var(--bg-main);
             border-top: 1px solid #dbe2df;
             position: sticky;
             top: 100dvh;
@@ -2019,6 +2036,9 @@
             scrollbar-color: #d0d0d0 #f9f9f9;
             padding-bottom: 20px;
             margin-top: -72px;
+        }
+        &.overflow-y{
+            overflow-y:scroll
         }
         &.open {
             right: 0;
@@ -2174,8 +2194,9 @@
     }
     @media (max-width: 600px) {
         .grid-teacher-student {
-            column-gap: 20px;
-            row-gap: 20px;
+            column-gap: 10px;
+            row-gap: 10px;
+            justify-content: space-between;
         }
         .tab-btn {
             column-gap: 10px;
@@ -2222,11 +2243,13 @@
 
 // BÀI HỌC
 .lesson-list {
+    border: 1px solid #DBE2DF;
+    border-radius: 16px;
+    overflow: hidden;
     .lesson-title {
-        background: #D0EAE2;
-        padding: 15px 45px 15px 15px;
+        background: #d0eae2;
+        padding: 15px;
         display: block;
-        border-radius: 16px;
         position: relative;
         color: #034C31;
         &::after {
@@ -2244,6 +2267,7 @@
             font-size: 18px;
             margin-bottom: 5px;
             line-height: 1.4;
+            padding-right: 30px;
         }
         .flex {
             gap: 20px;
@@ -2264,15 +2288,37 @@
                 }
             }
         }
+        .progress{
+            background: #D0EAE2;
+            height: 13px;
+            border-radius: 4px;
+            position: relative;
+            margin-top: 10px;
+            .step{
+                position: absolute;
+                background: linear-gradient(279deg, #2E8B57 0%, #A0D9BA 100%);
+                height: 13px;
+                border-radius: 50px;
+                left: 0;
+                top: 0px;
+                transition: .2s all;     
+                color: #fff;
+                text-align: right;
+                font-size: 12px;
+                line-height: 1.2;
+                padding: 0 5px;    
+                min-width: 28px;                       
+            }
+        }
         &[aria-expanded="true"] {
-            border-radius: 16px 16px 0 0;
+            border-bottom: 1px solid #DBE2DF;
             &::after {
                 transform: rotate(180deg)
             }
         }
     }
     .lesson {
-        padding: 12px 12px 12px 52px;
+        padding: 12px 0px 12px 52px;
         position: relative;
         cursor: pointer;
         .lesson-step {
@@ -2297,6 +2343,15 @@
                 top: 50%;
                 left: 50%;
                 margin: -13px 0 0 -13px;
+            }
+            .help{
+                background: #ff5e57;
+                color: #fff;
+                border: 0;
+                svg{
+                    width: 18px;
+                    height: 18px;
+                }
             }
         }
         .title {
@@ -2359,9 +2414,8 @@
                 display: none;
             }
         }
-        &:hover,
         &.active {
-            background: #D0EAE2;
+            background: #d0eae2;
         }
         &.succsess {
             .lesson-step {
@@ -2379,18 +2433,62 @@
         }
     }
     .card-body {
-        border: 1px solid #DBE2DF;
-        border-top: 0;
+        border: 0;
         border-radius: 0 0 16px 16px;
         padding: 0 15px 0 0;
+        .lesson-title{
+            background: none!important;
+            margin-right: -15px;
+        }
+        ul{
+            margin-bottom: 0;
+            li{
+                .lesson-title{
+                    border-top: 1px solid #dbe2df;
+                    border-bottom: 1px solid #dbe2df;
+                    &::after{
+                        top: 50%;
+                        margin-top: -12px;
+                    }
+                }
+                &:first-child {
+                    .lesson-title {
+                        border-top: 0;
+                    }
+                }
+            }
+        }
     }
     &.border {
         border-radius: 16px;
         overflow: hidden;
     }
+    &.you{
+        .lesson-title{
+            background: var(--bg-main);
+            &::after{
+                top: 15px;
+                margin-top: 0;
+            }
+        }
+        .lesson {
+            .title{
+                font-size: 16px;
+            }
+            .flex-2{
+                flex-shrink: 0;
+            }
+        }
+    }
     @media (max-width: 600px) {
+        .card-body {
+            padding: 0;
+            .lesson-title{
+                margin-right: 0;
+            }
+        }
         .lesson-title {
-            padding: 6px 30px 6px 15px;
+            padding: 10px 10px 10px 15px;
             &::after {
                 background-size: contain;
                 width: 20px;
@@ -2399,6 +2497,7 @@
             }
             h3 {
                 font-size: 15px;
+                padding-right: 15px
             }
             .flex {
                 font-size: 13px;
@@ -2406,7 +2505,7 @@
             }
         }
         .lesson {
-            padding: 8px 8px 8px 42px;
+            padding: 8px 10px 8px 42px;
             .title {
                 font-size: 14px;
                 font-weight: 500;
@@ -2427,6 +2526,17 @@
                             left: -8px;
                         }
                     }
+                }
+            }
+        }
+        &.you{
+            .lesson{
+                .title{
+                    font-size: 14px;
+                }
+                .flex-2{
+                    flex-shrink: 0;
+                    .btn-default{padding: 5px 10px;}
                 }
             }
         }
@@ -3517,7 +3627,7 @@
                 left: 50%;
             }
             .number {
-                background: #f1f8f5;
+                background: var(--bg-main);
                 position: relative;
                 z-index: 1;
                 display: flex;
@@ -3530,7 +3640,7 @@
                 margin: 0 auto 10px;
                 &::before {
                     content: "";
-                    border: 5px solid #f1f8f5;
+                    border: 5px solid var(--bg-main);
                     width: 46px;
                     height: 46px;
                     position: absolute;
@@ -4405,6 +4515,121 @@
                 width: 14px;
                 height: 14px;
             }
+        }
+    }
+}
+
+.user-info{
+    display: flex;
+    .ava{
+        width: 100px;
+        flex-shrink: 0;
+    }
+    .name{
+        font-size: 18px;
+        border-bottom: 1px dashed #DBE2DF;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+    .content{
+        width: 100%;
+    }
+}
+.checkin-user{
+    .list-date{
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        column-gap: 20px;
+        row-gap: 20px;
+        padding-bottom: 12px;
+        margin-bottom: 12px;
+        border-bottom: 1px dashed #DBE2DF;
+        li{
+            text-align: center;
+            color: #656867;
+            div{margin-bottom: 6px;}
+            .icon-svg{
+                width: 24px;
+                height: 24px;
+                color: #034C31;
+            }
+            &.off{
+                .icon-svg{
+                    color: #ABB0AE;
+                }
+            }
+        }
+    }
+    .ghim{
+        border-radius: 8px;
+        border: 1px solid #F9A826;
+        background: #FEF6E9;
+        padding: 16px;
+    }
+}
+.box-log{
+    background: #fff;
+    border-radius: 4px;
+    padding: 16px;
+    border: 1px solid #D93025;
+    display: flex;
+    h3{
+        font-size: 24px;
+        color: #D93025;
+        margin-bottom: 0;
+    }
+    @media (max-width: 600px) {
+        flex-wrap: wrap;
+        h3{font-size: 20px;}
+    }
+}
+
+.form-login2{
+   .form-group{
+        max-width: 500px;
+        display: flex;
+        align-items: center;
+        label{
+            color: #4E565C;
+            margin-bottom: 0;
+            flex-shrink: 0;
+            width: 150px;
+        }
+        .relative{
+            width: 100%;
+        }
+   }
+}
+
+.step-button{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+    font-size: 20px;
+    border: 1px solid #034C31;
+    color: #034C31;
+    .step{
+        background: #034C31;
+        color: #fff;
+        padding: 0 16px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .content {
+        padding: 10px 16px;
+        img{
+            width: 30px;
+        }
+    }
+    &.disable{
+        border: 1px solid #ABB0AE;
+        color: #ABB0AE;
+        .step{
+            background: #ABB0AE;
         }
     }
 }

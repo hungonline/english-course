@@ -254,11 +254,15 @@ input[type="number"] {
         row-gap: 8px;
     }
     @media (max-width: 991px) {
+        grid-template-columns: repeat(2, 1fr);
         &__1 {
             grid-template-columns: repeat(1, 1fr);
         }
-        grid-template-columns: repeat(2,
-        1fr);
+    }
+    @media (max-width: 600px) {
+        &.m_grid{
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 }
 
@@ -335,7 +339,9 @@ input[type="number"] {
 .bg-agray {
     background: #F4F6F8;
 }
-
+.bg-main {
+    background: var(--bg-main)!important;
+}
 .bg-padding {
     background: #F2F2F5;
     padding: 80px 0;
@@ -421,6 +427,12 @@ input[type="number"] {
 .radius_16 {
     border-radius: 16px;
 }
+.prepare-live{
+    color: #858887;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
 
 .btn-default {
     display: inline-flex;
@@ -464,7 +476,7 @@ input[type="number"] {
         border: 1px solid #2F80ED;
     }
     &.bg-main {
-        background: var(--colormain);
+        background: var(--colormain)!important;
         color: #fff;
     }
     &.bg-before {
@@ -497,6 +509,11 @@ input[type="number"] {
     }
     &:focus {
         outline: 0;
+    }
+    &.disable{
+        color: #858887;
+        background: none;
+        border: 1px solid #DBE2DF;
     }
     @media (max-width: 1199px) {
         &.big {
@@ -535,6 +552,9 @@ input[type="number"] {
 .color-gray2 {
     color: #DBE2DF
 }
+.color-gray3 {
+    color: #4E565C
+}
 
 .color-main {
     color: var(--colormain);
@@ -550,13 +570,18 @@ input[type="number"] {
 .color-green {
     color: rgba(52, 208, 88, 1);
 }
-
+.color-red{
+    color: #D93025;
+}
 .line-bottom {
     border-bottom: 1px solid rgba(107, 119, 154, 0.15);
 }
 
 .line-dashed {
     border-bottom: 1px dashed rgba(107, 119, 154, 0.15);
+}
+.line-dashed2 {
+    border-bottom: 2px dashed rgba(107, 119, 154, 0.15);
 }
 
 .tab-default {
@@ -815,10 +840,11 @@ input[type="number"] {
 }
 
 .confir_res {
-    padding-left: 30px;
+    padding-left: 28px;
     position: relative;
     cursor: pointer;
     display: block;
+    color: #4E565C;
     input {
         position: absolute;
         opacity: 0;
@@ -826,12 +852,12 @@ input[type="number"] {
     }
     .checkmark {
         position: absolute;
-        top: 2px;
+        top: 3px;
         left: 0;
-        height: 18px;
-        width: 18px;
+        height: 20px;
+        width: 20px;
         background: #FFFFFF;
-        border: 1px solid #d4d4d5;
+        border: 1px solid #656867;
         box-sizing: border-box;
         border-radius: 4px;
         &:after {
@@ -850,9 +876,9 @@ input[type="number"] {
     input:checked~.checkmark:after {
         display: block;
     }
-    // input:checked~.checkmark {
-    //     border: 1px solid #222;
-    // }
+    input:checked~.checkmark~.text{
+        color: #034C31;
+    }
     input:disabled~.checkmark {
         border: 1px solid #EBEBEB;
     }
@@ -863,18 +889,17 @@ input[type="number"] {
     &.circle {
         .checkmark {
             border-radius: 50%;
-            border: 1px solid #999999;
-            &:hover {
-                border: 1px solid #999999;
-            }
             &:after {
-                border: solid #fff;
-                border-width: 0 1px 1px 0;
+                border: 0;
+                width: 16px;
+                height: 16px;
+                background: #034c31;
+                border-radius: 50%;
+                left: 1px;
             }
         }
         input:checked~.checkmark {
-            background: #222;
-            border: 1px solid #222;
+            border: 1px solid #034C31;
         }
     }
 }
