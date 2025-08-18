@@ -260,7 +260,7 @@ input[type="number"] {
         }
     }
     @media (max-width: 600px) {
-        &.m_grid{
+        &.m_grid {
             grid-template-columns: repeat(1, 1fr);
         }
     }
@@ -339,9 +339,11 @@ input[type="number"] {
 .bg-agray {
     background: #F4F6F8;
 }
+
 .bg-main {
     background: var(--bg-main)!important;
 }
+
 .bg-padding {
     background: #F2F2F5;
     padding: 80px 0;
@@ -427,7 +429,8 @@ input[type="number"] {
 .radius_16 {
     border-radius: 16px;
 }
-.prepare-live{
+
+.prepare-live {
     color: #858887;
     display: flex;
     align-items: center;
@@ -478,6 +481,11 @@ input[type="number"] {
     &.bg-main {
         background: var(--colormain)!important;
         color: #fff;
+        span {
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M9.70492 6.32227L8.29492 7.73227L12.8749 12.3223L8.29492 16.9123L9.70492 18.3223L15.7049 12.3223L9.70492 6.32227Z' fill='%23FEFEFE'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right top 1px;
+        }
     }
     &.bg-before {
         background: #D0EAE2;
@@ -510,7 +518,7 @@ input[type="number"] {
     &:focus {
         outline: 0;
     }
-    &.disable{
+    &.disable {
         color: #858887;
         background: none;
         border: 1px solid #DBE2DF;
@@ -552,6 +560,7 @@ input[type="number"] {
 .color-gray2 {
     color: #DBE2DF
 }
+
 .color-gray3 {
     color: #4E565C
 }
@@ -559,6 +568,7 @@ input[type="number"] {
 .color-main {
     color: var(--colormain);
 }
+
 .color-main2 {
     color: #023623;
 }
@@ -570,9 +580,11 @@ input[type="number"] {
 .color-green {
     color: rgba(52, 208, 88, 1);
 }
-.color-red{
+
+.color-red {
     color: #D93025;
 }
+
 .line-bottom {
     border-bottom: 1px solid rgba(107, 119, 154, 0.15);
 }
@@ -580,6 +592,7 @@ input[type="number"] {
 .line-dashed {
     border-bottom: 1px dashed rgba(107, 119, 154, 0.15);
 }
+
 .line-dashed2 {
     border-bottom: 2px dashed rgba(107, 119, 154, 0.15);
 }
@@ -876,7 +889,7 @@ input[type="number"] {
     input:checked~.checkmark:after {
         display: block;
     }
-    input:checked~.checkmark~.text{
+    input:checked~.checkmark~.text {
         color: #034C31;
     }
     input:disabled~.checkmark {
@@ -1287,26 +1300,26 @@ input[type="number"] {
     .table {
         thead th {
             border-top: 0;
-            border-bottom: 1px solid #00234B;
-            color: #525F7F;
-            font-weight: 400;
-            text-transform: uppercase;
+            color: #fff;
+            font-weight: 700;
             font-size: 14px;
+            background-color: #034C31;
         }
         th,
         td {
-            padding: 15px .75rem;
-            font-size: 16px;
-            &:last-child {
-                text-align: right;
-            }
-            &:first-child {
-                padding-left: 0;
-                text-align: left;
-            }
+            padding: 10px .75rem;
+            font-size: 14px;
+            color: #4E565C;
         }
         .content {
             width: 400px;
+        }
+        tr {
+            &:nth-child(2n) {
+                td {
+                    background: #DBE2DF;
+                }
+            }
         }
     }
     @media (max-width: 767px) {
