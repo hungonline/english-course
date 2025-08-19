@@ -1,0 +1,215 @@
+// COMMENT BÀI THI
+.slide-comment {
+    .close-comment {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        width: 28px;
+        height: 28px;
+        border-radius: 5px;
+        background: #fff;
+        display: none;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        svg {
+            width: 26px;
+            height: 26px;
+        }
+    }
+    @media (max-width: 991px) {
+        position: fixed;
+        background: #fff;
+        top: 0;
+        bottom: 0;
+        right: -100%;
+        width: 100% !important;
+        -webkit-transition: all .25s ease-in-out;
+        transition: all .25s ease-in-out;
+        z-index: 1001;
+        .title-cate {
+            text-align: left;
+            div {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                background: linear-gradient(279deg, #A0D9BA 0%, #2E8B57 100%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                .ic {
+                    background: url(images/graphics/ic-thaoluan.png) no-repeat;
+                    width: 20px;
+                    height: 21px;
+                }
+            }
+        }
+        .close-comment {
+            display: flex;
+        }
+        .input-mobile {
+            width: 100%;
+            background: var(--bg-main);
+            border-top: 1px solid #dbe2df;
+            position: sticky;
+            top: 100dvh;
+            z-index: 2;
+            .input-comment {
+                &::before {
+                    left: 10px;
+                }
+            }
+            .form-control {
+                border: 1px solid #DBE2DF;
+                font-size: 14px;
+                width: calc(100% - 65px);
+            }
+        }
+        .list-comment {
+            height: calc(100dvh - 225px);
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #d0d0d0 #f9f9f9;
+            padding-bottom: 20px;
+            margin-top: -72px;
+        }
+        &.overflow-y {
+            overflow-y: scroll
+        }
+        &.open {
+            right: 0;
+        }
+    }
+}
+
+.input-comment {
+    position: relative;
+    &::before {
+        content: "";
+        background: url(images/icons/ic-comment.png);
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: 8px;
+        left: 0;
+    }
+    .form-control {
+        border: 0;
+        padding: 8px 60px 8px 40px;
+        height: 40px;
+    }
+    .send {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: #034C31;
+        border: 0;
+        border-radius: 4px;
+        height: 40px;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+}
+
+.list-comment {
+    .itemt-comment {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        .full_content {
+            margin-bottom: 5px;
+        }
+        .name {
+            font-weight: 500;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        .block_like_web {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            .time {
+                color: #ABB0AE;
+                font-weight: 300;
+            }
+            .reactions-wrap {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                a {
+                    color: #656867;
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                    font-weight: 300;
+                    .ic-reply {
+                        background: url(images/icons/ic-reply.svg);
+                        width: 18px;
+                        height: 18px;
+                        background-size: contain;
+                        margin-top: -3px;
+                    }
+                    .ic-like {
+                        background: url(images/icons/ic-like.svg);
+                        width: 18px;
+                        height: 18px;
+                        background-size: contain;
+                        margin-top: -3px;
+                    }
+                    &.active {
+                        color: #034C31;
+                        .ic-like {
+                            background: url(images/icons/ic-like2.png);
+                            background-size: contain;
+                        }
+                    }
+                }
+            }
+        }
+        .sub_comment {
+            border-left: 2px dashed #DBE2DF;
+            padding-left: 15px;
+            .sub_comment_item {
+                width: 100%;
+                margin-top: 15px;
+            }
+        }
+    }
+    .pagination {
+        border-top: 1px solid #dbe2df;
+        padding-top: 20px;
+        margin-left: -30px;
+        margin-right: -30px;
+    }
+    @media (max-width: 1480px) {
+        .itemt-comment {
+            font-size: 14px;
+        }
+        .pagination {
+            margin-left: -20px;
+            margin-right: -20px;
+        }
+    }
+    @media (max-width: 600px) {
+        .pagination {
+            margin-left: 0;
+            margin-right: 0;
+            padding-top: 15px;
+        }
+    }
+}
+
+// END COMMENT BÀI THI

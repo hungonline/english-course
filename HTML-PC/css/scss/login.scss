@@ -1,0 +1,283 @@
+// Login / Register
+.page-login {
+    min-height: 100dvh;
+    margin: auto;
+    .flex-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 100dvh;
+        align-content: start;
+    }
+    .topbar,
+    .main-left {
+        display: none;
+    }
+    &__left,
+    &__right {
+        width: 50%;
+        min-height: 100dvh;
+    }
+    &__left {
+        background: var(--colormain) url(images/graphics/img-login.png);
+        padding: 40px;
+        color: #fff;
+        background-size: cover;
+        background-position: bottom center;
+        .logo {
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            &:hover {
+                color: #fff;
+            }
+        }
+        .title {
+            font-weight: 500;
+            font-size: 32px;
+            line-height: 1.4;
+        }
+    }
+    &__right {
+        padding: 5% 7.8%;
+        position: relative;
+        .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+    }
+    .form-login {
+        margin: 0 auto;
+        font-size: 16px;
+        font-weight: 300;
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+        .btn-default {
+            &.bg-before {
+                color: #568775;
+            }
+            &.active {
+                color: #fff;
+            }
+        }
+        .form-control {
+            border: 0;
+            border-radius: 0;
+            border-bottom: 1px solid #abb0ae;
+            background: none;
+            font-weight: 300;
+            padding: 10px;
+            color: var(--colormain);
+        }
+        .relative {
+            .icon-svg {
+                position: absolute;
+                left: 0;
+                top: 10px;
+                width: 24px;
+                height: 24px;
+                color: var(--colormain);
+            }
+            .form-control {
+                padding-left: 35px;
+            }
+            .toggle-password {
+                position: absolute;
+                right: 0;
+                top: 10px;
+                cursor: pointer;
+                .icon-svg {
+                    position: static;
+                    color: #DBE2DF;
+                }
+                &.show {
+                    .icon-svg {
+                        color: var(--colormain);
+                    }
+                }
+            }
+        }
+        .grid-otp {
+            column-gap: 16px;
+            row-gap: 16px;
+            .form-control {
+                background: #fff;
+                border-radius: 4px;
+                border: 1px solid #DBE2DF;
+                text-align: center;
+            }
+        }
+        .send-back {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            justify-content: center;
+            color: #656867;
+            margin-top: 200px;
+        }
+    }
+    .login-social {
+        a {
+            border-radius: 8px;
+            border: 1px solid #DBE2DF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            gap: 10px;
+            margin-bottom: 30px;
+            img {
+                width: 47px;
+            }
+        }
+    }
+    .step-reset-pass {
+        display: flex;
+        justify-content: center;
+        .step {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            color: #656867;
+            width: 50%;
+            position: relative;
+            &::after {
+                content: "";
+                background: #dbe2df;
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                top: 18px;
+                left: 50%;
+            }
+            .number {
+                background: var(--bg-main);
+                position: relative;
+                z-index: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 2px solid #DBE2DF;
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                margin: 0 auto 10px;
+                &::before {
+                    content: "";
+                    border: 5px solid var(--bg-main);
+                    width: 46px;
+                    height: 46px;
+                    position: absolute;
+                }
+            }
+            &:last-child {
+                &::after {
+                    display: none;
+                }
+            }
+            &.active {
+                color: var(--colormain);
+                .number {
+                    border: 2px solid var(--colormain);
+                }
+            }
+            &.succsess {
+                &::after {
+                    background: var(--colormain);
+                }
+            }
+        }
+    }
+    @media (max-width: 1025px) {
+        &__left {
+            padding: 30px;
+            .logo {
+                margin-bottom: 20px;
+            }
+            .title {
+                font-size: 24px;
+            }
+        }
+        &__right {
+            padding: 40px;
+            .title-cate {
+                font-size: 24px;
+            }
+        }
+    }
+    @media (max-width: 991px) {
+        &__left {
+            padding: 20px;
+            .title {
+                font-size: 20px;
+            }
+        }
+        &__right {
+            padding: 20px;
+            .title-cate {
+                font-size: 20px;
+            }
+        }
+        .form-login {
+            font-size: 15px;
+            .login-social {
+                a {
+                    height: 45px;
+                    gap: 10px;
+                    margin-bottom: 20px;
+                    img {
+                        width: 40px;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 600px) {
+        display: block;
+        .main-left {
+            display: block;
+        }
+        .mb30 {
+            margin-bottom: 30px!important;
+        }
+        &__left {
+            width: 100%;
+            background: none;
+            min-height: auto;
+            padding: 0;
+            .topbar {
+                display: flex;
+            }
+            .img-login {
+                display: none;
+            }
+            .logo {
+                margin-bottom: 0;
+            }
+        }
+        &__right {
+            padding: 40px 20px;
+            width: 100%;
+            position: static;
+            .close-menu {
+                display: none;
+            }
+        }
+        .form-login {
+            .grid-otp {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+        .other-requirements {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+        }
+    }
+}

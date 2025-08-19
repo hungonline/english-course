@@ -1,15 +1,10 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300..600&display=swap');
 @import "var.scss";
+@import "font.scss";
 @import "reset.scss";
 @import "common.scss";
-// @import "placeholder.scss";
-// @import "aos.scss";
 //Plugin
-@import "swiper.scss";
 @import "modal.scss";
 //Box template
-@import "header.scss";
-@import "footer.scss";
 @import "element.scss";
 @import "responsive.scss";
