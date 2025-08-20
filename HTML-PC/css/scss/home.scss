@@ -2,7 +2,6 @@
     background: #25644d url(images/graphics/bg-banner.jpg) no-repeat top;
     background-size: cover;
     margin-top: -70px;
-    padding: 30px 30px 60px 30px;
     color: #fff;
     .grid-home {
         align-items: center;
@@ -52,7 +51,6 @@
         margin-bottom: -60px;
     }
     @media (max-width: 1480px) {
-        padding: 20px 20px 60px 20px;
         .title {
             font-size: 36px;
         }
@@ -64,7 +62,6 @@
     }
     @media (max-width: 1025px) {
         margin-bottom: 20px;
-        padding: 20px;
         .content {
             column-gap: 10px;
             row-gap: 10px;
