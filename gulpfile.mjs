@@ -65,10 +65,10 @@ function sassTask() {
 
 // ✅ Optimize theme.css only when --prod
 function optimizeCSS() {
-  return gulp.src(`${rootDir}/css/{article,calendar,footer,header,home,lesson,login,ranking,style,swiper,test,thao-luan,user}.css`)
+  return gulp.src(`${rootDir}/css/{article,bootstrap,calendar,footer,header,home,lesson,login,ranking,style,swiper,test,thao-luan,user}.css`)
     .pipe(purgecss({
       content: [`${rootDir}/**/*.html`, `${rootDir}/js/**/*.js`],
-      safelist: [/^swiper/, /^mfp-content/, /^mfp/], // giữ lại class động nếu cần
+      safelist: [/^swiper/, /^modal/, /^mfp/], // giữ lại class động nếu cần
     }))
     .pipe(sassCompiler({ outputStyle: 'compressed' }).on('error', sassCompiler.logError))
     .pipe(gulp.dest(`${rootDir}/css`))
