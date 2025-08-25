@@ -18,11 +18,19 @@ import changed from 'gulp-changed';
 import fs from 'fs';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
+import purgecss from 'gulp-purgecss';   // ✅ thêm PurgeCSS
 
+// Gulp-Sass setup
 const sassCompiler = gulpSass(sass);
+
+// BrowserSync setup
 const browserSync = browserSyncPkg.create();
+
+// Xử lý tham số dòng lệnh
 const argv = yargs(hideBin(process.argv)).argv;
+
 const mobile = argv.mobile ? true : false;
+const isProd = argv.prod ? true : false;  // ✅ thêm cờ build production
 const rootDir = mobile ? "Mobile" : "HTML-PC";
 const AUTOPREFIXER_BROWSERS = [
   'last 2 versions', '> 1%', 'ie >= 9', 'ff >= 30',
@@ -41,18 +49,33 @@ function browserSyncTask(done) {
   done();
 }
 
-// Compile SCSS
+
+// Compile SCSS (luôn build bản đầy đủ để dev dễ debug)
 function sassTask() {
   return gulp.src(`${rootDir}/css/scss/*.scss`)
     .pipe(sourcemaps.init())
     .pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
     .pipe(wait(500))
-    .pipe(sassCompiler({ outputStyle: 'compressed' }).on('error', sassCompiler.logError))
+    .pipe(sassCompiler({ outputStyle: 'expanded' }).on('error', sassCompiler.logError))
     .pipe(autoprefixer({ overrideBrowserslist: AUTOPREFIXER_BROWSERS }))
     .pipe(sourcemaps.write('maps'))
     .pipe(gulp.dest(`${rootDir}/css`))
     .pipe(browserSync.stream());
 }
+
+// ✅ Optimize theme.css only when --prod
+function optimizeCSS() {
+  return gulp.src(`${rootDir}/css/{article,calendar,footer,header,home,lesson,login,ranking,style,swiper,test,thao-luan,user}.css`)
+    .pipe(purgecss({
+      content: [`${rootDir}/**/*.html`, `${rootDir}/js/**/*.js`],
+      safelist: [/^swiper/, /^mfp-content/, /^mfp/], // giữ lại class động nếu cần
+    }))
+    .pipe(sassCompiler({ outputStyle: 'compressed' }).on('error', sassCompiler.logError))
+    .pipe(gulp.dest(`${rootDir}/css`))
+    .pipe(browserSync.stream());
+}
+
+
 
 // SVG Combine
 function svgCombine() {
@@ -83,8 +106,6 @@ function svgCombine() {
     }))
     .pipe(gulp.dest("."));
 }
-
-
 
 // SVG Icon Font (Async Import)
 async function svgIconFont() {
@@ -149,9 +170,19 @@ function watchFiles() {
   gulp.watch(`${rootDir}/*.html`, { events: ['add'] }, buildIndex);
 }
 
-// Default Task
-const defaultTask = gulp.series(gulp.parallel(sassTask, buildTemplate, buildIndex, browserSyncTask, svgCombine), watchFiles);
+// Default Task (dev mode)
+const defaultTask = gulp.series(
+  gulp.parallel(sassTask, buildTemplate, buildIndex, browserSyncTask, svgCombine),watchFiles
+);
 
-// Export tasks
-export { sassTask as sass, svgTask as svg, buildTemplate, buildIndex, svgCombine, watchFiles as watch };
-export default defaultTask;
+// Production Task (build + optimize + mở browser)
+const prodTask = gulp.series(
+  gulp.parallel(sassTask, buildTemplate, buildIndex),
+  optimizeCSS,
+  browserSyncTask,   // ✅ mở luôn BrowserSync
+  watchFiles         // ✅ theo dõi file để reload
+);
+
+// Export
+export { sassTask as sass, svgTask as svg, buildTemplate, buildIndex, svgCombine, watchFiles as watch, optimizeCSS };
+export default isProd ? prodTask : defaultTask;

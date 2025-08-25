@@ -688,31 +688,64 @@
 .step-button {
     display: flex;
     align-items: center;
-    overflow: hidden;
-    border-radius: 8px;
-    font-size: 20px;
-    border: 1px solid #034C31;
+    font-size: 16px;
     color: #034C31;
     .step {
         background: #034C31;
         color: #fff;
         padding: 0 16px;
         height: 100%;
+        border-radius: 8px 0 0 8px;
         display: flex;
         align-items: center;
         justify-content: center;
     }
     .content {
-        padding: 10px 16px;
+        padding: 8px 16px;
+        height: 100%;
+        border-radius:0 8px 8px 0;
+        border: 1px solid #034C31;
         img {
-            width: 30px;
+            width: 25px;
         }
     }
     &.disable {
-        border: 1px solid #ABB0AE;
         color: #ABB0AE;
         .step {
             background: #ABB0AE;
+        }
+        .content {
+            border: 1px solid #ABB0AE;
+        }
+    }
+}
+
+.flex{
+    .step-button{
+        position: relative;
+        &:nth-child(n+2){
+            &::before {
+                content: "";
+                background: #ABB0AE;
+                position: absolute;
+                width: 30px;
+                height: 1px;
+                left: -30px;
+            }
+        }
+        &.success{
+            &::before{
+                background: #034C31;
+            }
+        }
+    }
+    @media (max-width: 991px) {
+        column-gap: 15px !important;
+        row-gap: 15px !important;    
+        .step-button{
+            &::before{
+                display: none;
+            }
         }
     }
 }

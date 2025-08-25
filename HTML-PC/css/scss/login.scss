@@ -76,30 +76,11 @@
         }
         .relative {
             .icon-svg {
-                position: absolute;
                 left: 0;
                 top: 10px;
-                width: 24px;
-                height: 24px;
-                color: var(--colormain);
             }
             .form-control {
                 padding-left: 35px;
-            }
-            .toggle-password {
-                position: absolute;
-                right: 0;
-                top: 10px;
-                cursor: pointer;
-                .icon-svg {
-                    position: static;
-                    color: #DBE2DF;
-                }
-                &.show {
-                    .icon-svg {
-                        color: var(--colormain);
-                    }
-                }
             }
         }
         .grid-otp {

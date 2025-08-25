@@ -14,17 +14,6 @@ body {
     font-weight: 400;
 }
 
-// body::-webkit-scrollbar {
-//     width: 6px;
-//     background-color: #fff;
-// }
-// body::-webkit-scrollbar-thumb {
-//     background-color: #222;
-// }
-// body::-webkit-scrollbar-track {
-//     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-//     background-color: #fff;
-// }
 .container {
     position: relative;
 }
@@ -305,5 +294,35 @@ u {
     &:focus {
         box-shadow: none;
         outline: 0;
+    }
+}
+.form-group{
+    .relative{
+        .icon-svg{
+            position: absolute;
+            left: 10px;
+            top: 7px;
+            width: 24px;
+            height: 24px;
+            color: var(--colormain);            
+        }
+        .form-control{
+            padding-left: 45px;
+        }
+        .toggle-password {
+            position: absolute;
+            right: 0;
+            top: 10px;
+            cursor: pointer;
+            .icon-svg {
+                position: static;
+                color: #DBE2DF;
+            }
+            &.show {
+                .icon-svg {
+                    color: var(--colormain);
+                }
+            }
+        }        
     }
 }

@@ -141,11 +141,43 @@
         row-gap: 20px;
     }
     .my-login {
+        position: relative;
         .ava {
             img {
                 width: 40px;
                 height: 40px;
                 border-radius: 50%;
+            }
+        }
+        .menu-user{
+            position: absolute;
+            min-width: 220px;
+            background: #fff;
+            right: -20px;
+            top: 46px;
+            border-radius: 8px;
+            overflow: hidden;
+            li{
+                font-size: 16px;
+                transition: 0.2s all;
+                a{
+                    display: flex;
+                    color: #4E565C;
+                    align-items: center;
+                    column-gap: 8px;
+                    row-gap: 8px;
+                    padding: 8px 16px;
+                }
+                .icon-svg{
+                    fill:#4E565C
+                }
+                &.active,&:hover{
+                    
+                    background: #68BBA0;
+                    a{
+                        color: #fff;
+                    }
+                }
             }
         }
     }

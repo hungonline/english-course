@@ -1,5 +1,5 @@
 {
-  "name": "my-project",
+  "name": "test-purgecss",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
     "gulp-index": "^0.2.0",
     "gulp-notify": "^5.0.0",
     "gulp-plumber": "^1.2.1",
-    "gulp-replace": "^1.1.4",
+    "gulp-purgecss": "^7.0.2",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-svg-sprite": "^2.0.3",
