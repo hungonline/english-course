@@ -220,7 +220,7 @@
             display: block;
         }
         .my-notifi {
-            color: #333;
+            color: #666!important;
         }
         .my-user {
             .btn-default {
@@ -232,6 +232,11 @@
                 img {
                     border: 0;
                 }
+            }
+        }
+        .my-user{
+            .btn-default{
+                color: #666;
             }
         }
         &.detail {
