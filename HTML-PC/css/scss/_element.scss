@@ -1216,9 +1216,20 @@
                 padding: 6px 8px;
                 border-radius: 2px;
                 background: #F1F8F5;
+                margin-bottom: 0;
                 font-weight: 300;
                 color: var(--colormain);
+                &.ic-vip{
+                    background: #FEF6E9 url(images/graphics/bg-vip.png) no-repeat;
+                    background-position: 4px 4px;
+                    color: #F9A826;
+                    padding: 6px 8px 6px 25px;
+                }
             }
+        }
+        &.vip{
+            background: #FDE4BC;
+            border: 1px solid #F9A826;
         }
     }
     @media (min-width: 1921px) {
@@ -1303,6 +1314,88 @@
 .filde-img {
     img {
         width: 100%;
+    }
+}
+
+.chat-bot{
+    position: fixed;
+    z-index: 99;
+    bottom: 20px;
+    right: 20px;
+    .icon-chat-bot{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: #034C31;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        .icon-svg{
+            width: 40px;
+            height: 40px;
+        }
+    }
+    .wrap-chat{
+        position: absolute;
+        width: 340px;
+        right: 0;
+        bottom: 70px;
+        box-shadow: 0 24px 48px -8px rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.04);
+        background: #fff;
+        border-radius: 20px;
+        -webkit-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;        
+    }
+    .top-chat{
+        color: #fff;
+        font-size: 16px;
+        position: relative;
+        background: #034C31 url(images/graphics/dotted-chat.png) no-repeat;
+        padding: 20px;
+        background-position: top -50px left -20px;
+        border-radius: 20px 20px 0 0;
+        p{
+            margin-bottom: 10px;
+        }
+    }
+    .list-chat{
+       padding: 20px; 
+       border-radius: 0 0 20px 20px;
+       .link-chat{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            background: #F1F8F5;
+            padding: 16px;
+            border-radius: 16px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            position: relative;
+            &:last-child{
+                margin-bottom: 0;
+            }
+            .icon-svg,img{
+                width: 26px;
+                height: 26px;
+            }
+            .next{
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                right: 16px;
+            }
+            &:hover{
+                background: #68BBA0;
+                color: #fff;
+            }
+            &.tu-van{
+                background: #A674F8;
+                color: #fff;
+            }
+        }
     }
 }
 
