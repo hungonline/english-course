@@ -1380,20 +1380,24 @@
             .icon-svg,img{
                 width: 26px;
                 height: 26px;
+                color: #1877f2;
             }
             .next{
                 width: 20px;
                 height: 20px;
                 position: absolute;
                 right: 16px;
+                
             }
             &:hover{
                 background: #68BBA0;
                 color: #fff;
+                .icon-svg,img{color: #fff;}
             }
             &.tu-van{
                 background: #A674F8;
                 color: #fff;
+                .icon-svg,img{color: #fff;}
             }
         }
     }
